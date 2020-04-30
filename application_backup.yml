@@ -1,0 +1,1883 @@
+- name: Streaming
+  no_of_tiers: 2
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:895718477
+        entity_type: Application
+      entity_id: 10000:562:143080550
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(Streaming)') and
+            (tagKeyVal matches 'Application-Tier:(Frontend)'))
+      name: Frontend
+    - application:
+        entity_id: 10000:561:895718477
+        entity_type: Application
+      entity_id: 10000:562:1724763999
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(Streaming)') and
+            (tagKeyVal matches 'Application-Tier:(Monitoring)'))
+      name: Monitoring
+- name: Secure-CRM
+  no_of_tiers: 3
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:115789753
+        entity_type: Application
+      entity_id: 10000:562:335920241
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'panf5demo-web-vm01' or name = 'panf5demo-web-vm02'
+      name: Web
+    - application:
+        entity_id: 10000:561:115789753
+        entity_type: Application
+      entity_id: 10000:562:785129039
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'panf5demo-app-vm01' or name = 'panf5demo-app-vm02'
+      name: App
+    - application:
+        entity_id: 10000:561:115789753
+        entity_type: Application
+      entity_id: 10000:562:308979784
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'panf5demo-db-vm01'
+      name: DB
+- name: Azure-Moodle
+  no_of_tiers: 2
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:1263810001
+        entity_type: Application
+      entity_id: 10000:562:1063357433
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'mymoodle0'
+      name: Web
+    - application:
+        entity_id: 10000:561:1263810001
+        entity_type: Application
+      entity_id: 10000:562:1039831102
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'mymoodle1'
+      name: DB
+- name: cmbu
+  no_of_tiers: 4
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:1660497117
+        entity_type: Application
+      entity_id: 10000:562:741867140
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(cmbu)-.*-.*') and (name matches '.*-(sc2dc)-.*'))
+      name: sc2dc
+    - application:
+        entity_id: 10000:561:1660497117
+        entity_type: Application
+      entity_id: 10000:562:859164798
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(cmbu)-.*-.*') and (name matches '.*-(tmm)-.*'))
+      name: tmm
+    - application:
+        entity_id: 10000:561:1660497117
+        entity_type: Application
+      entity_id: 10000:562:392292285
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(cmbu)-.*-.*') and (name matches '.*-(octo)-.*'))
+      name: octo
+    - application:
+        entity_id: 10000:561:1660497117
+        entity_type: Application
+      entity_id: 10000:562:1497818339
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(cmbu)-.*-.*') and (name matches '.*-(wdcdc)-.*'))
+      name: wdcdc
+- name: Tito Commuter App
+  no_of_tiers: 3
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:491446771
+        entity_type: Application
+      entity_id: 10000:562:1338344316
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: cluster = 'North Cluster' and name like 'FE-mcm'
+      name: Frontend
+    - application:
+        entity_id: 10000:561:491446771
+        entity_type: Application
+      entity_id: 10000:562:589789004
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: cluster = 'North Cluster' and name like 'DB-mcm'
+      name: MySQL
+    - application:
+        entity_id: 10000:561:491446771
+        entity_type: Application
+      entity_id: 10000:562:869634557
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'Network-PrivateCloudNetwork-mcm736208-114991114738-e5563607-5d64-4386-9fe0-2b5-0'
+      name: LB-Frontend
+- name: vRNI
+  no_of_tiers: 10
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:375181769
+        entity_type: Application
+      entity_id: 10000:562:1781225622
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(vRNI)-.*') and (name matches '.*?-(RAHULB)-.*'))
+      name: RAHULB
+    - application:
+        entity_id: 10000:561:375181769
+        entity_type: Application
+      entity_id: 10000:562:1658289230
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(vRNI)-.*') and (name matches '.*?-(Field)-.*'))
+      name: Field
+    - application:
+        entity_id: 10000:561:375181769
+        entity_type: Application
+      entity_id: 10000:562:1545342861
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(vRNI)-.*') and (name matches '.*?-(Pre)-.*'))
+      name: Pre
+    - application:
+        entity_id: 10000:561:375181769
+        entity_type: Application
+      entity_id: 10000:562:404138933
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(vRNI)-.*') and (name matches '.*?-(PRE)-.*'))
+      name: PRE
+    - application:
+        entity_id: 10000:561:375181769
+        entity_type: Application
+      entity_id: 10000:562:1684649731
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(vRNI)-.*') and (name matches '.*?-(Demo)-.*'))
+      name: Demo
+    - application:
+        entity_id: 10000:561:375181769
+        entity_type: Application
+      entity_id: 10000:562:897596427
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(vRNI)-.*') and (name matches '.*?-(Platform)-.*'))
+      name: Platform
+    - application:
+        entity_id: 10000:561:375181769
+        entity_type: Application
+      entity_id: 10000:562:1058685998
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(vRNI)-.*') and (name matches '.*?-(HOL)-.*'))
+      name: HOL
+    - application:
+        entity_id: 10000:561:375181769
+        entity_type: Application
+      entity_id: 10000:562:1406111678
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(vRNI)-.*') and (name matches '.*?-(Collector)-.*'))
+      name: Collector
+    - application:
+        entity_id: 10000:561:375181769
+        entity_type: Application
+      entity_id: 10000:562:64496601
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(vRNI)-.*') and (name matches '.*?-(Team)-.*'))
+      name: Team
+    - application:
+        entity_id: 10000:561:375181769
+        entity_type: Application
+      entity_id: 10000:562:1283088640
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(vRNI)-.*') and (name matches '.*?-(PM)-.*'))
+      name: PM
+- name: onprem_imagic
+  no_of_tiers: 4
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:1009798759
+        entity_type: Application
+      entity_id: 10000:562:2020240448
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(onprem_imagic)-.*') and (name matches
+            '.*-(app)-.*'))
+      name: app
+    - application:
+        entity_id: 10000:561:1009798759
+        entity_type: Application
+      entity_id: 10000:562:722746310
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(onprem_imagic)-.*') and (name matches
+            '.*-(web)-.*'))
+      name: web
+    - application:
+        entity_id: 10000:561:1009798759
+        entity_type: Application
+      entity_id: 10000:562:1814945983
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(onprem_imagic)-.*') and (name matches
+            '.*-(db)-.*'))
+      name: db
+    - application:
+        entity_id: 10000:561:1009798759
+        entity_type: Application
+      entity_id: 10000:562:1121729790
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria:
+          ip_addresses:
+          - 100.200.105.17
+        membership_type: IPAddressMembershipCriteria
+        search_membership_criteria: null
+      name: applb
+- name: AWS-Fitbike
+  no_of_tiers: 6
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:18535120268386265
+        entity_type: Application
+      entity_id: 10000:562:1626889928273583714
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(fitbike)-.*') and (name matches '.*?-(app)-.*'))
+      name: app
+    - application:
+        entity_id: 10000:561:18535120268386265
+        entity_type: Application
+      entity_id: 10000:562:6158964542204842773
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(fitbike)-.*') and (name matches '.*?-(mgmt)-.*'))
+      name: mgmt
+    - application:
+        entity_id: 10000:561:18535120268386265
+        entity_type: Application
+      entity_id: 10000:562:8549038144817124271
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(fitbike)-.*') and (name matches '.*?-(web)-.*'))
+      name: web
+    - application:
+        entity_id: 10000:561:18535120268386265
+        entity_type: Application
+      entity_id: 10000:562:2972769207362349241
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(fitbike)-.*') and (name matches '.*?-(dblb)-.*'))
+      name: dblb
+    - application:
+        entity_id: 10000:561:18535120268386265
+        entity_type: Application
+      entity_id: 10000:562:8282514102179444537
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(fitbike)-.*') and (name matches '.*?-(api)-.*'))
+      name: api
+    - application:
+        entity_id: 10000:561:18535120268386265
+        entity_type: Application
+      entity_id: 10000:562:2957180185536379377
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(fitbike)-.*') and (name matches '.*?-(db)-.*'))
+      name: db
+- name: HR Records
+  no_of_tiers: 3
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:811819131
+        entity_type: Application
+      entity_id: 10000:562:1361573292
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'web-01c'
+      name: Web
+    - application:
+        entity_id: 10000:561:811819131
+        entity_type: Application
+      entity_id: 10000:562:2029839346
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'app-01c'
+      name: App
+    - application:
+        entity_id: 10000:561:811819131
+        entity_type: Application
+      entity_id: 10000:562:1272995414
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'db-01c'
+      name: DB
+- name: Top-Video
+  no_of_tiers: 6
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:1035730974
+        entity_type: Application
+      entity_id: 10000:562:510172213
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(vRNI)-.*') and (name matches '.*-(Demo)-.*'))
+      name: Demo
+    - application:
+        entity_id: 10000:561:1035730974
+        entity_type: Application
+      entity_id: 10000:562:1117454189
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(vRNI)-.*') and (name matches '.*-(37)-.*'))
+      name: '37'
+    - application:
+        entity_id: 10000:561:1035730974
+        entity_type: Application
+      entity_id: 10000:562:677356434
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(vRNI)-.*') and (name matches '.*-(Platform)-.*'))
+      name: Platform
+    - application:
+        entity_id: 10000:561:1035730974
+        entity_type: Application
+      entity_id: 10000:562:357789531
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(vRNI)-.*') and (name matches '.*-(Collector)-.*'))
+      name: Collector
+    - application:
+        entity_id: 10000:561:1035730974
+        entity_type: Application
+      entity_id: 10000:562:1142959740
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(vRNI)-.*') and (name matches '.*-(Team)-.*'))
+      name: Team
+    - application:
+        entity_id: 10000:561:1035730974
+        entity_type: Application
+      entity_id: 10000:562:1693777678
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(vRNI)-.*') and (name matches '.*-(GA)-.*'))
+      name: GA
+- name: Shopping App
+  no_of_tiers: 2
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:1980683972
+        entity_type: Application
+      entity_id: 10000:562:1920302343
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'db-c-702'
+      name: DB
+    - application:
+        entity_id: 10000:561:1980683972
+        entity_type: Application
+      entity_id: 10000:562:1468770767
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'web-c-701'
+      name: Web
+- name: 3TierApp02
+  no_of_tiers: 3
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:1483634277477407873
+        entity_type: Application
+      entity_id: 10000:562:1688616953465453016
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(3TierApp02)')
+            and (tagKeyVal matches 'Application-Tier:(App)'))
+      name: App
+    - application:
+        entity_id: 10000:561:1483634277477407873
+        entity_type: Application
+      entity_id: 10000:562:5945816140878728928
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(3TierApp02)')
+            and (tagKeyVal matches 'Application-Tier:(Web)'))
+      name: Web
+    - application:
+        entity_id: 10000:561:1483634277477407873
+        entity_type: Application
+      entity_id: 10000:562:5095490042214942236
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(3TierApp02)')
+            and (tagKeyVal matches 'Application-Tier:(DB)'))
+      name: DB
+- name: Folding@Home
+  no_of_tiers: 1
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:2598861793941542126
+        entity_type: Application
+      entity_id: 10000:562:513937285693861704
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'FoldingAtHome-01' or name = 'FoldingAtHome-02' or name =
+            'FoldingAtHome-03'
+      name: FaH-Workers
+- name: Application_Demo
+  no_of_tiers: 1
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:2101194438130418898
+        entity_type: Application
+      entity_id: 10000:562:7498995728249661600
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: Host = '10.73.184.69'
+      name: host=10.73.184.69
+- name: CustomerBilling
+  no_of_tiers: 1
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:962248340
+        entity_type: Application
+      entity_id: 10000:562:408209248
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(CustomerBilling)')
+            and (tagKeyVal not matches 'Application-Tier:(C)'))
+      name: unmatched
+- name: fitbike
+  no_of_tiers: 6
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:6110168744927099362
+        entity_type: Application
+      entity_id: 10000:562:2163011811648544710
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(fitbike)-.*') and (name matches '.*?-(app)-.*'))
+      name: app
+    - application:
+        entity_id: 10000:561:6110168744927099362
+        entity_type: Application
+      entity_id: 10000:562:6282731354492892423
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(fitbike)-.*') and (name matches '.*?-(mgmt)-.*'))
+      name: mgmt
+    - application:
+        entity_id: 10000:561:6110168744927099362
+        entity_type: Application
+      entity_id: 10000:562:5866955653667546395
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(fitbike)-.*') and (name matches '.*?-(web)-.*'))
+      name: web
+    - application:
+        entity_id: 10000:561:6110168744927099362
+        entity_type: Application
+      entity_id: 10000:562:6268775259386410736
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(fitbike)-.*') and (name matches '.*?-(dblb)-.*'))
+      name: dblb
+    - application:
+        entity_id: 10000:561:6110168744927099362
+        entity_type: Application
+      entity_id: 10000:562:7270843133468183457
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(fitbike)-.*') and (name matches '.*?-(api)-.*'))
+      name: api
+    - application:
+        entity_id: 10000:561:6110168744927099362
+        entity_type: Application
+      entity_id: 10000:562:3514843711206151294
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(fitbike)-.*') and (name matches '.*?-(db)-.*'))
+      name: db
+- name: vRNI-Field
+  no_of_tiers: 1
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:936882698
+        entity_type: Application
+      entity_id: 10000:562:1350448852
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(vRNI-Field)-.*-.*') and (name matches
+            '(vRNI-Field)-(Demo)-.*'))
+      name: vRNI-Field-Demo
+- name: Vulnerable OS
+  no_of_tiers: 1
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:218071172
+        entity_type: Application
+      entity_id: 10000:562:2129015509
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: Operating System like 'Microsoft Windows Server 2003' or Operating
+            System like 'Microsoft Windows Server 2008' or Operating System like 'Red
+            Hat Enterprise Linux 6' or Operating System like 'Red Hat Enterprise Linux
+            5' or Operating System like 'SUSE Linux Enterprise 10'
+      name: Vulnerable OS
+- name: eCommerce
+  no_of_tiers: 3
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:263751606
+        entity_type: Application
+      entity_id: 10000:562:1832449041
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'app-02b'
+      name: VMC on AWS
+    - application:
+        entity_id: 10000:561:263751606
+        entity_type: Application
+      entity_id: 10000:562:1038357110
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'web-02b'
+      name: Azure VMware Solution
+    - application:
+        entity_id: 10000:561:263751606
+        entity_type: Application
+      entity_id: 10000:562:1050974375
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria:
+          ip_addresses:
+          - 10.173.22.4
+        membership_type: IPAddressMembershipCriteria
+        search_membership_criteria: null
+      name: Global LB
+- name: IaasMgmt
+  no_of_tiers: 1
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:7270261293942251474
+        entity_type: Application
+      entity_id: 10000:562:7793183958267856852
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'IaasMgmt-ORA-02'
+      name: IaasMgmt_db_ora_instance
+- name: VDI Pool 1
+  no_of_tiers: 1
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:1494128796
+        entity_type: Application
+      entity_id: 10000:562:1793027531
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria:
+          ip_addresses:
+          - 10.0.0.1-10.0.255.255
+        membership_type: IPAddressMembershipCriteria
+        search_membership_criteria: null
+      name: VDI Pool 1
+- name: tanzu tees
+  no_of_tiers: 3
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:1343578837
+        entity_type: Application
+      entity_id: 10000:562:586789701
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'Web-01-F5' or name = 'Web-02-F5'
+      name: web
+    - application:
+        entity_id: 10000:561:1343578837
+        entity_type: Application
+      entity_id: 10000:562:1522841034
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: Datacenter
+      name: app
+    - application:
+        entity_id: 10000:561:1343578837
+        entity_type: Application
+      entity_id: 10000:562:1071782978
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria:
+          ip_addresses:
+          - 10.10.10.20
+        membership_type: IPAddressMembershipCriteria
+        search_membership_criteria: null
+      name: db
+- name: MigrationWave02
+  no_of_tiers: 4
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:459178718965545863
+        entity_type: Application
+      entity_id: 10000:562:2623591872289190257
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: application = 'CRM'
+      name: App01
+    - application:
+        entity_id: 10000:561:459178718965545863
+        entity_type: Application
+      entity_id: 10000:562:6129331213055519148
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: application = 'tanzu tees'
+      name: App02
+    - application:
+        entity_id: 10000:561:459178718965545863
+        entity_type: Application
+      entity_id: 10000:562:3003255143403833116
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: application = 'Exchange-Test'
+      name: App03
+    - application:
+        entity_id: 10000:561:459178718965545863
+        entity_type: Application
+      entity_id: 10000:562:8939923376947928197
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: application = 'web  apps'
+      name: App04
+- name: CRM-Records
+  no_of_tiers: 1
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:1380949432
+        entity_type: Application
+      entity_id: 10000:562:954558142
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: Incoming Port = 3306
+      name: DB
+- name: GG-3TierApp01
+  no_of_tiers: 3
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:2147808920550253644
+        entity_type: Application
+      entity_id: 10000:562:6975994078904493163
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(3TierApp01)-.*') and (name matches '.*?-(App)-.*'))
+      name: App
+    - application:
+        entity_id: 10000:561:2147808920550253644
+        entity_type: Application
+      entity_id: 10000:562:4999949549161563510
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(3TierApp01)-.*') and (name matches '.*?-(Web)-.*'))
+      name: Web
+    - application:
+        entity_id: 10000:561:2147808920550253644
+        entity_type: Application
+      entity_id: 10000:562:5166094229766280292
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(3TierApp01)-.*') and (name matches '.*?-(DB)-.*'))
+      name: DB
+- name: Azure-Tiny-RSS-Reader
+  no_of_tiers: 1
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:671033949
+        entity_type: Application
+      entity_id: 10000:562:1341531226
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'my-tiny-rss-reader'
+      name: Azure-Tiny-RSS-Reader
+- name: DC2-CRM
+  no_of_tiers: 6
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:3037542428357064595
+        entity_type: Application
+      entity_id: 10000:562:8022192074014985388
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(DC2-CRM)') and
+            (tagKeyVal matches 'Application-Tier:(APP)'))
+      name: APP
+    - application:
+        entity_id: 10000:561:3037542428357064595
+        entity_type: Application
+      entity_id: 10000:562:7433672020740191124
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(DC2-CRM)') and
+            (tagKeyVal matches 'Application-Tier:(WEB)'))
+      name: WEB
+    - application:
+        entity_id: 10000:561:3037542428357064595
+        entity_type: Application
+      entity_id: 10000:562:123991463605550022
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(DC2-CRM)') and
+            (tagKeyVal matches 'Application-Tier:(APP-LB)'))
+      name: APP-LB
+    - application:
+        entity_id: 10000:561:3037542428357064595
+        entity_type: Application
+      entity_id: 10000:562:2463685144240629910
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(DC2-CRM)') and
+            (tagKeyVal matches 'Application-Tier:(DB-LB)'))
+      name: DB-LB
+    - application:
+        entity_id: 10000:561:3037542428357064595
+        entity_type: Application
+      entity_id: 10000:562:7588806315839677646
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(DC2-CRM)') and
+            (tagKeyVal matches 'Application-Tier:(DB)'))
+      name: DB
+    - application:
+        entity_id: 10000:561:3037542428357064595
+        entity_type: Application
+      entity_id: 10000:562:8015920013968556856
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(DC2-CRM)') and
+            (tagKeyVal matches 'Application-Tier:(WEB-LB)'))
+      name: WEB-LB
+- name: VMC-Imagic-Hybrid
+  no_of_tiers: 3
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:852773428
+        entity_type: Application
+      entity_id: 10000:562:1454784849
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'imagic-applayer-app01' or name = 'imagic-applayer-app02'
+            or name = 'imagic-ap'
+      name: AppLayer
+    - application:
+        entity_id: 10000:561:852773428
+        entity_type: Application
+      entity_id: 10000:562:27305016
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(Imagic)') and
+            (tagKeyVal matches 'Application-Tier:(database)'))
+      name: Database
+    - application:
+        entity_id: 10000:561:852773428
+        entity_type: Application
+      entity_id: 10000:562:889145792
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'imagic-frontend-web01' or name = 'imagic-fr'
+      name: Frontend
+- name: MOAD Production Shopping Cart
+  no_of_tiers: 2
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:4630664529139300839
+        entity_type: Application
+      entity_id: 10000:562:968694477686176806
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'mcclanahanc-mysql-001091'
+      name: DB
+    - application:
+        entity_id: 10000:561:4630664529139300839
+        entity_type: Application
+      entity_id: 10000:562:2596915823455755668
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'mcclanahanc-frontend-001092'
+      name: Web
+- name: Skybet
+  no_of_tiers: 1
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:2468722353306988264
+        entity_type: Application
+      entity_id: 10000:562:8295314743437862436
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: Operating System like 'Microsoft Windows XP Professional (32-bit)'
+      name: t1
+- name: app_wdc-vra-fielddemo
+  no_of_tiers: 4
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:102471669486794856
+        entity_type: Application
+      entity_id: 10000:562:5423369855003478521
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'vra-fielddemo-test'
+      name: vra-fielddemo-test
+    - application:
+        entity_id: 10000:561:102471669486794856
+        entity_type: Application
+      entity_id: 10000:562:603205609611347738
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'vra-fielddemo-amer' or name = 'cmac-org-data-collector'
+      name: vra-fielddemo-amer
+    - application:
+        entity_id: 10000:561:102471669486794856
+        entity_type: Application
+      entity_id: 10000:562:869084327341276037
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'CMAC-DOCKER-HOST' or name = 'field-vro-75' or name = 'wdcnsx-master'
+            or name = 'wdc-cas-rdc-cmbu-tmm-org'
+      name: d-r
+    - application:
+        entity_id: 10000:561:102471669486794856
+        entity_type: Application
+      entity_id: 10000:562:4782956732305260191
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'vra-fielddemo-amer' or name = 'vra8-lcm-ga' or name = 'wdc-fd-lcm8-01'
+      name: vra-lcm
+- name: 3TierApp011
+  no_of_tiers: 5
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:2364578563333416471
+        entity_type: Application
+      entity_id: 10000:562:3564984969549995889
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(3TierApp01)-.*') and (name matches '.*?-(App)-.*'))
+      name: App
+    - application:
+        entity_id: 10000:561:2364578563333416471
+        entity_type: Application
+      entity_id: 10000:562:7701049720602811078
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(3TierApp01)-.*') and (name matches '.*?-(Web)-.*'))
+      name: Web
+    - application:
+        entity_id: 10000:561:2364578563333416471
+        entity_type: Application
+      entity_id: 10000:562:1103941529299119410
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(3TierApp01)-.*') and (name matches '.*?-(DLR)-.*'))
+      name: DLR
+    - application:
+        entity_id: 10000:561:2364578563333416471
+        entity_type: Application
+      entity_id: 10000:562:2221962355479516234
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(3TierApp01)-.*') and (name matches '.*?-(Edge)-.*'))
+      name: Edge
+    - application:
+        entity_id: 10000:561:2364578563333416471
+        entity_type: Application
+      entity_id: 10000:562:5866608352202978217
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(3TierApp01)-.*') and (name matches '.*?-(DB)-.*'))
+      name: DB
+- name: Windows_OS_2016
+  no_of_tiers: 1
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:2104480644573069220
+        entity_type: Application
+      entity_id: 10000:562:1372147872627590396
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: Operating System='Microsoft Windows Server 2016 or later (64-bit)'
+      name: Windows_OS_2016
+- name: DNS Servers
+  no_of_tiers: 1
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:2082802549
+        entity_type: Application
+      entity_id: 10000:562:16125175
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: Incoming Port = '53'
+      name: DNS Servers
+- name: AWS-Hybrid-Funbike
+  no_of_tiers: 6
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:1031226309
+        entity_type: Application
+      entity_id: 10000:562:2128800661
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'AWS-Application-Name:(Funbike)')
+            and (tagKeyVal matches 'AWS-Tier-Name:(App)'))
+      name: App
+    - application:
+        entity_id: 10000:561:1031226309
+        entity_type: Application
+      entity_id: 10000:562:1775542698
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'AWS-Application-Name:(Funbike)')
+            and (tagKeyVal matches 'AWS-Tier-Name:(Mgmt)'))
+      name: Mgmt
+    - application:
+        entity_id: 10000:561:1031226309
+        entity_type: Application
+      entity_id: 10000:562:803065287
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'AWS-Application-Name:(Funbike)')
+            and (tagKeyVal matches 'AWS-Tier-Name:(Web)'))
+      name: Web
+    - application:
+        entity_id: 10000:561:1031226309
+        entity_type: Application
+      entity_id: 10000:562:1394394785
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'AWS-Application-Name:(Funbike)')
+            and (tagKeyVal matches 'AWS-Tier-Name:(API)'))
+      name: API
+    - application:
+        entity_id: 10000:561:1031226309
+        entity_type: Application
+      entity_id: 10000:562:4143282916814088610
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'funbike-db-01' or name = 'funbike-db-02'
+      name: DB
+    - application:
+        entity_id: 10000:561:1031226309
+        entity_type: Application
+      entity_id: 10000:562:3834867199353028602
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'funbike-dblb01-0'
+      name: DBLB
+- name: Funbike
+  no_of_tiers: 3
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:323166971683271747
+        entity_type: Application
+      entity_id: 10000:562:7486371031924494897
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: name like funbike-web
+      name: Funbike-Web
+    - application:
+        entity_id: 10000:561:323166971683271747
+        entity_type: Application
+      entity_id: 10000:562:5821027764240504603
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: name like funbike-db
+      name: Funbike-DB
+    - application:
+        entity_id: 10000:561:323166971683271747
+        entity_type: Application
+      entity_id: 10000:562:4257426309549644546
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: name like funbike-a
+      name: Funbike-App
+- name: Azure-Blog
+  no_of_tiers: 2
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:2005786103
+        entity_type: Application
+      entity_id: 10000:562:437439004
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'myword'
+      name: Web
+    - application:
+        entity_id: 10000:561:2005786103
+        entity_type: Application
+      entity_id: 10000:562:297200434
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'mywordpress1'
+      name: DB
+- name: CustomerAPI
+  no_of_tiers: 3
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:3618573570268187691
+        entity_type: Application
+      entity_id: 10000:562:900411026583180718
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(CustomerAPI)')
+            and (tagKeyVal matches 'Application-Tier:(Frontend)'))
+      name: Frontend
+    - application:
+        entity_id: 10000:561:3618573570268187691
+        entity_type: Application
+      entity_id: 10000:562:2365844179609039793
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(CustomerAPI)')
+            and (tagKeyVal matches 'Application-Tier:(FrontendLB)'))
+      name: FrontendLB
+    - application:
+        entity_id: 10000:561:3618573570268187691
+        entity_type: Application
+      entity_id: 10000:562:4803528004640351459
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(CustomerAPI)')
+            and (tagKeyVal matches 'Application-Tier:(DB)'))
+      name: DB
+- name: CRM
+  no_of_tiers: 6
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:3302579355915901861
+        entity_type: Application
+      entity_id: 10000:562:3709597157895580766
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(CRM)') and (tagKeyVal
+            matches 'Application-Tier:(APP)'))
+      name: APP
+    - application:
+        entity_id: 10000:561:3302579355915901861
+        entity_type: Application
+      entity_id: 10000:562:8930379815141684653
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(CRM)') and (tagKeyVal
+            matches 'Application-Tier:(APP-LB)'))
+      name: APP-LB
+    - application:
+        entity_id: 10000:561:3302579355915901861
+        entity_type: Application
+      entity_id: 10000:562:1741602438028007413
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(CRM)') and (tagKeyVal
+            matches 'Application-Tier:(WEB)'))
+      name: WEB
+    - application:
+        entity_id: 10000:561:3302579355915901861
+        entity_type: Application
+      entity_id: 10000:562:7608474763692442415
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(CRM)') and (tagKeyVal
+            matches 'Application-Tier:(DB-LB)'))
+      name: DB-LB
+    - application:
+        entity_id: 10000:561:3302579355915901861
+        entity_type: Application
+      entity_id: 10000:562:7731323620423731645
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(CRM)') and (tagKeyVal
+            matches 'Application-Tier:(DB)'))
+      name: DB
+    - application:
+        entity_id: 10000:561:3302579355915901861
+        entity_type: Application
+      entity_id: 10000:562:1860549145803636957
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((tagKeyVal matches 'Application-Name:(CRM)') and (tagKeyVal
+            matches 'Application-Tier:(WEB-LB)'))
+      name: WEB-LB
+- name: Shopping Cart
+  no_of_tiers: 2
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:2110474618
+        entity_type: Application
+      entity_id: 10000:562:1010535173
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'Shopping-App'
+      name: APP
+    - application:
+        entity_id: 10000:561:2110474618
+        entity_type: Application
+      entity_id: 10000:562:1481354858
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'Shopping-DB'
+      name: DB
+- name: HIVE Training
+  no_of_tiers: 4
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:1466694486
+        entity_type: Application
+      entity_id: 10000:562:1313038296
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'HIVE-Storage-Server'
+      name: Storage
+    - application:
+        entity_id: 10000:561:1466694486
+        entity_type: Application
+      entity_id: 10000:562:48475735
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'HIVE-Video-Server'
+      name: Video
+    - application:
+        entity_id: 10000:561:1466694486
+        entity_type: Application
+      entity_id: 10000:562:1943376262
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria:
+          ip_addresses:
+          - 101.100.1.0/24
+        membership_type: IPAddressMembershipCriteria
+        search_membership_criteria: null
+      name: Detroit Branch
+    - application:
+        entity_id: 10000:561:1466694486
+        entity_type: Application
+      entity_id: 10000:562:720863366
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria:
+          ip_addresses:
+          - 101.100.0.0/24
+        membership_type: IPAddressMembershipCriteria
+        search_membership_criteria: null
+      name: Rotterdam Branch
+- name: wdc
+  no_of_tiers: 5
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:901100963
+        entity_type: Application
+      entity_id: 10000:562:2120737216
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(wdc)-.*') and (name matches '.*?-(cas)-.*'))
+      name: cas
+    - application:
+        entity_id: 10000:561:901100963
+        entity_type: Application
+      entity_id: 10000:562:1920016794
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(wdc)-.*') and (name matches '.*?-(field)-.*'))
+      name: field
+    - application:
+        entity_id: 10000:561:901100963
+        entity_type: Application
+      entity_id: 10000:562:1272615211
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(wdc)-.*') and (name matches '.*?-(cp1)-.*'))
+      name: cp1
+    - application:
+        entity_id: 10000:561:901100963
+        entity_type: Application
+      entity_id: 10000:562:1417869147
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(wdc)-.*') and (name matches '.*?-(arc80)-.*'))
+      name: arc80
+    - application:
+        entity_id: 10000:561:901100963
+        entity_type: Application
+      entity_id: 10000:562:842086675
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(wdc)-.*') and (name matches '.*?-(fd)-.*'))
+      name: fd
+- name: app_iperf-client
+  no_of_tiers: 2
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:7152368142382299671
+        entity_type: Application
+      entity_id: 10000:562:4618825177156472713
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'iPerf-Server-2'
+      name: iperf-server-2
+    - application:
+        entity_id: 10000:561:7152368142382299671
+        entity_type: Application
+      entity_id: 10000:562:7839824196679882788
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'iPerf-Client-2' or name = 'iPerf-Client-1' or name = 'iPerf-Client-7-ESG'
+            or name = 'iPerf-Client-4' or name = 'iPerf-Client-3' or name = 'iPerf-Client-6'
+            or name = 'iperf-gw' or name = 'iPerf-Client-5'
+      name: iperf-client
+- name: DC2:Miner
+  no_of_tiers: 2
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:1314767284879938333
+        entity_type: Application
+      entity_id: 10000:562:2406412621925327063
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(DC2:Miner)-.*') and (name matches '.*?-(vGPU)-.*'))
+      name: vGPU
+    - application:
+        entity_id: 10000:561:1314767284879938333
+        entity_type: Application
+      entity_id: 10000:562:6635963265097856393
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: (name) and ((name matches '(DC2:Miner)-.*') and (name matches '.*?-(Process)-.*'))
+      name: Process
+- name: MigrationWave01
+  no_of_tiers: 1
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:3237448440819253611
+        entity_type: Application
+      entity_id: 10000:562:864654303870605233
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: network address = 10.196.206.0/24
+      name: MigrationWave01
+- name: Brownfield App
+  no_of_tiers: 3
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:1751710156
+        entity_type: Application
+      entity_id: 10000:562:950457307
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'app-01a'
+      name: App
+    - application:
+        entity_id: 10000:561:1751710156
+        entity_type: Application
+      entity_id: 10000:562:1899803271
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'db-01a'
+      name: DB
+    - application:
+        entity_id: 10000:561:1751710156
+        entity_type: Application
+      entity_id: 10000:562:1710407255
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'web-01a'
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: VirtualMachine
+          filter: Operating System = 'Microsoft Windows Server 2012 (64-bit)'
+      name: Web
