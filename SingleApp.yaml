@@ -1,0 +1,40 @@
+- name: Secure-CRM
+  no_of_tiers: 3
+  tiers:
+    results:
+    - application:
+        entity_id: 10000:561:115789753
+        entity_type: Application
+      entity_id: 10000:562:335920241
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'panf5demo-web-vm01' or name = 'panf5demo-web-vm02'
+      name: Web
+    - application:
+        entity_id: 10000:561:115789753
+        entity_type: Application
+      entity_id: 10000:562:785129039
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'panf5demo-app-vm01' or name = 'panf5demo-app-vm02'
+      name: App
+    - application:
+        entity_id: 10000:561:115789753
+        entity_type: Application
+      entity_id: 10000:562:308979784
+      entity_type: Tier
+      group_membership_criteria:
+      - ip_address_membership_criteria: null
+        membership_type: SearchMembershipCriteria
+        search_membership_criteria:
+          entity_type: BaseVirtualMachine
+          filter: name = 'panf5demo-db-vm01'
+      name: DB
